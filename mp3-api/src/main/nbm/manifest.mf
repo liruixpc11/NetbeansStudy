@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+OpenIDE-Module-Localizing-Bundle: lab/cadl/lirui/netbeans/study/mp3/api/Bundle.properties
+OpenIDE-Module-Public-Packages: lab.cadl.lirui.netbeans.study.mp3.api.*

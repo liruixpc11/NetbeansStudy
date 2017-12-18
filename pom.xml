@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>lab.cadl.lirui</groupId>
+    <artifactId>NetbeansStudy-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>NetbeansStudy-parent</name>
+
+    <properties>
+        <netbeans.version>RELEASE80</netbeans.version>
+        <brandingToken>netbeansstudy</brandingToken>
+    </properties>
+
+    <repositories>
+        <!--
+        Repository hosting NetBeans modules, especially APIs.
+        Versions are based on IDE releases, e.g.: RELEASE691
+        To create your own repository, use: nbm:populate-repository
+        -->
+        <repository>
+            <id>netbeans</id>
+            <name>NetBeans</name>
+            <url>http://bits.netbeans.org/nexus/content/groups/netbeans/</url>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.netbeans.api</groupId>
+                <artifactId>org-openide-util-lookup</artifactId>
+                <version>${netbeans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.netbeans.api</groupId>
+                <artifactId>org-openide-windows</artifactId>
+                <version>${netbeans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.netbeans.api</groupId>
+                <artifactId>org-openide-awt</artifactId>
+                <version>${netbeans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.netbeans.api</groupId>
+                <artifactId>org-openide-util</artifactId>
+                <version>${netbeans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.netbeans.api</groupId>
+                <artifactId>org-openide-loaders</artifactId>
+                <version>${netbeans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.netbeans.api</groupId>
+                <artifactId>org-openide-nodes</artifactId>
+                <version>${netbeans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.netbeans.api</groupId>
+                <artifactId>org-openide-filesystems</artifactId>
+                <version>${netbeans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.netbeans.api</groupId>
+                <artifactId>org-netbeans-api-progress</artifactId>
+                <version>${netbeans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.netbeans.external</groupId>
+                <artifactId>swing-layout-1.0.4</artifactId>
+                <version>${netbeans.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.netbeans.api</groupId>
+                <artifactId>org-netbeans-api-annotations-common</artifactId>
+                <version>${netbeans.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>nbm-maven-plugin</artifactId>
+                    <version>3.13</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <brandingToken>${brandingToken}</brandingToken>
+                        <cluster>${brandingToken}</cluster>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+            </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <modules>
+        <module>branding</module>
+        <module>application</module>
+        <module>visual-library-study</module>
+        <module>mp3-api</module>
+        <module>mp3-db-impl</module>
+        <module>mp3-filesystem-impl</module>
+        <module>mp3-player-module</module>
+    </modules>
+
+</project>
